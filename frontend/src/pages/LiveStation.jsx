@@ -22,7 +22,7 @@ const LiveStation = ({ user, handleLogout }) => {
       setError("");
 
       const response = await fetch(
-        `http://localhost:5000/api/train/stationLive?code=${stationCode}`
+        `${VITE_API_BASE_URL}/train/stationLive?code=${stationCode}`
       );
       const result = await response.json();
       console.log("Live Station API Response:", result);

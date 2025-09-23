@@ -37,7 +37,7 @@ const TTime = ({ user, handleLogout }) => {
       setTrainData(null);
 
       const response = await fetch(
-        `http://localhost:5000/api/train/getRoute?trainNo=${tn}`
+        `${import.meta.env.VITE_API_BASE_URL}/train/getRoute?trainNo=${tn}`
       );
       const result = await response.json();
       console.log("Timetable API Result:", result);

@@ -46,7 +46,7 @@ const TFinder = () => {
       setTrains([]);
 
       const response = await fetch(
-        `http://localhost:5000/api/train/betweenStations?from=${fromStation}&to=${toStation}`
+        `${import.meta.env.VITE_API_BASE_URL}/train/betweenStations?from=${fromStation}&to=${toStation}`
       );
       const result = await response.json();
       console.log("API Result:", result);

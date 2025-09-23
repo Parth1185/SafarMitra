@@ -44,7 +44,7 @@ export default function Login() {
     setFlash(null);
 
     try {
-      const res = await api.post("/auth/login", form);
+      const res = await api.post(import.meta.env.VITE_API_BASE_URL+"/auth/login", form);
 
       // Normalize user object
       const userData = res.data?.user || res.data;

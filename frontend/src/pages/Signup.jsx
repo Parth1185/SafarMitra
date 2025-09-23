@@ -20,7 +20,7 @@ export default function Signup() {
     setFlash(null);
 
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", {
+      await axios.post(import.meta.env.VITE_API_BASE_URL+"/auth/signup", {
         name,
         username,
         email,

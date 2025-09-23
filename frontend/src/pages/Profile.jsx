@@ -77,7 +77,7 @@ const Profile = () => {
         updatedData.newPassword = formData.newPassword;
       }
 
-      const response = await fetch("http://localhost:5000/api/auth/edit-profile", {
+      const response = await fetch(import.meta.env.VITE_API_BASE_URL+"/auth/edit-profile", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

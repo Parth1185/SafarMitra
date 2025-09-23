@@ -22,7 +22,7 @@ const TTickets = () => {
         return;
       }
 
-      const res = await axios.get("http://localhost:5000/api/tickets/thistory", {
+      const res = await axios.get(import.meta.env.VITE_API_BASE_URL+"/tickets/thistory", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -53,7 +53,7 @@ const TTickets = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `http://localhost:5000/api/tickets/cancel/${ticketId}`,
+        `${import.meta.env.VITE_API_BASE_URL}/tickets/cancel/${ticketId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

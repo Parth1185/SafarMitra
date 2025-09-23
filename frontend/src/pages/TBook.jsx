@@ -168,7 +168,7 @@ const toDropdownRef = useRef(null);
     if (!formData.fromStationCode || !formData.toStationCode || !formData.dateOfJourney) return;
 
     const dateParam = formatDateForAPI(formData.dateOfJourney);
-    const url = `http://localhost:5000/api/train/getTrainOn?from=${encodeURIComponent(
+    const url = `${import.meta.env.VITE_API_BASE_URL}/train/getTrainOn?from=${encodeURIComponent(
       formData.fromStationCode
     )}&to=${encodeURIComponent(formData.toStationCode)}&date=${encodeURIComponent(
       dateParam
@@ -242,7 +242,7 @@ const toDropdownRef = useRef(null);
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/tickets/tbook", {
+      const response = await fetch(import.meta.env.VITE_API_BASE_URL+"/tickets/tbook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
