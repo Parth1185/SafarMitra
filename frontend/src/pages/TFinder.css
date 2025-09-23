@@ -1,0 +1,239 @@
+/* Background */
+.tfinder-container {
+background-image: url('https://assets.zeezest.com/blogs/PROD_Id-1595-trains-travel-vacation-banner_1617802943754_thumb_1200.jpeg');
+background-size: cover;
+background-attachment: fixed;
+  min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+/* Title */
+.tfinder-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #3874FF;
+  margin: 25px 0;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Section */
+.tfinder-input-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-left: 300px;
+  margin-bottom: 25px;
+  width: 1000px;
+  flex-wrap: wrap;
+}
+
+.tfinder-input {
+  padding: 12px 15px;
+  width: 250px;
+  font-size: 16px;
+  border: 2px solid #dcdcdc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.tfinder-input:focus {
+  border-color: #3874FF;
+  box-shadow: 0 0 10px rgba(56, 116, 255, 0.3);
+}
+
+/* Search Button */
+.tfinder-search-btn {
+  padding: 12px 22px;
+  background: linear-gradient(45deg, #3874FF, #2856cc);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tfinder-search-btn:hover {
+  background: linear-gradient(45deg, #2856cc, #1e3fa8);
+}
+
+/* Error */
+.tfinder-error {
+  color: #ff4c4c;
+  font-weight: 700;
+  margin-top: 12px;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Loader Popup */
+.tfinder-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tfinder-popup {
+  background: white;
+  padding: 25px 35px;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Results Table Section */
+.tfinder-results {
+  margin-top: 25px;
+}
+/* Spinner Animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3; /* Light gray */
+  border-top: 6px solid #3874FF; /* Blue accent */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px auto; /* Center with some spacing below */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Section */
+.tfinder-results-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto 20px auto;
+}
+
+.tfinder-results-title {
+  font-size: 30px;
+  margin-bottom: 0;
+  color: #4a2406;
+  font-weight: 800;
+  margin-left: 550px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Sort Dropdown */
+.tfinder-sort-dropdown {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #3874FF;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 15px;
+  width: 250px;
+}
+
+.tfinder-sort-dropdown:focus {
+  outline: none;
+  border-color: #2856cc;
+  box-shadow: 0 0 8px rgba(40, 86, 204, 0.4);
+}
+
+/* Filter Input */
+.tfinder-filter-input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #dcdcdc;
+  width: 250px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.tfinder-filter-input:focus {
+  border-color: #3874FF;
+  box-shadow: 0 0 8px rgba(56, 116, 255, 0.4);
+}
+
+/* Table */
+.tfinder-table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tfinder-table th,
+.tfinder-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.tfinder-table th {
+  background: #082463;
+  color: rgb(253, 183, 238);
+}
+
+/* Table Row Hover */
+.tfinder-table tr:hover {
+  background: rgba(131, 103, 176, 0.3);
+}
+
+/* Clickable Train Number */
+.train-number-link {
+  color: #051946;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.train-number-link:hover {
+  color: #0f2764;
+  text-shadow: 0 0 3px rgb(39, 139, 12);
+}
+
+/* Running Days */
+.running-days {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.day {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.running {
+  background: #0f7126;
+  color: white;
+}
+
+.not-running {
+  background: #a80717;
+  color: white;
+}

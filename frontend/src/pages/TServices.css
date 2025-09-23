@@ -1,0 +1,233 @@
+.services-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+   background: url('https://user-gen-media-assets.s3.amazonaws.com/gemini_images/cb6a7d6b-8141-4370-8b44-faa630ff0308.png') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  padding-bottom: 50px;
+}
+
+
+.nar {
+  background: linear-gradient(90deg, #fff5f5, #adacf0, #7a7aa8, #a6a4a6);
+    color: rgba(0, 0, 0, 0.667);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  position: absolute; 
+  height: 80px;
+  width: 97%;
+  max-width: 1500px;
+  flex-wrap: wrap;
+}
+
+
+
+.lft {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo {
+  width: 110px;
+  height: 90px;
+}
+
+
+
+.cntr {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex-grow: 1;
+  color: #073300;
+  text-shadow: none;
+}
+.rgt {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+
+.nav-bn {
+  padding: 9px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+color: #fffb00;
+  background-color: #4d025f;
+  width: auto;
+}
+
+.nav-bn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+
+
+
+
+
+.page-title {
+  text-align: center;
+  color: #231c23;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  background: rgba(43, 246, 127, 0.53);
+}
+.nav-btn {
+  padding: 9px 22px ;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px ;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  color: #e3b91e;
+  background-color: #43215e;
+  width: 120px;
+}
+
+.nav-btn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+
+.pale {
+  text-align: center;
+  color: #231c23;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  background: rgba(43, 246, 127, 0.53);
+}
+
+.services-container {
+  margin-top: 100px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Modern frosted glass card with funky gradient outline and shadows */
+.service-card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 30px rgba(72, 72, 130, 0.3),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+  transition: 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Animated gradient border on hover */
+.service-card:hover {
+  border-image-slice: 1;
+  border-width: 4px;
+  border-image-source: linear-gradient(45deg, #3c393b, #090751, #582403);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:
+    0 6px 40px rgba(58, 134, 255, 0.6),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  border-radius: 0px;
+}
+
+/* Icon container with funky glow */
+.icon-container {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* background: linear-gradient(135deg, #ff006e, #8338ec); */
+  box-shadow:
+    0 0 15px #000000;
+  transition: box-shadow 0.4s ease;
+}
+
+
+
+.service-icon {
+  max-width: 70%;
+  max-height: 70%;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+}
+
+/* Card text content with clean modern fonts and colors */
+.service-card .card-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.service-card h2 {
+  font-size: 1.75rem;
+  color: #182118;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-shadow: 0 0 10px rgb(59, 122, 231);
+  background: none;
+}
+
+.service-card p {
+  font-size: 1.15rem;
+  color: #dcfcdfcc;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.458);
+  padding: 12px 18px;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 10px rgba(9, 7, 7, 0.15);
+  max-width: 280px;
+  margin: 0 auto;
+}

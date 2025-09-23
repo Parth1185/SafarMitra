@@ -1,0 +1,262 @@
+/* === Global Styles === */
+body, html, .dashboard {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f1f5f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* === Background === */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.darjeelingtours.co.uk/uploads/2/5/9/9/25998565/01.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  /* filter: brightness(0.7) blur(1px); */
+  z-index: 1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* === Navbar === */
+.navbr {
+background: radial-gradient(circle, #df61b1 0%, #a052df 50%, #a3de8f 100%);
+  color: rgba(0, 0, 0, 0.667);
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  position: relative;
+  height: 80px;
+  width: 100%;
+  max-width: 1500px;
+  flex-wrap: wrap;
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo {
+  width: 110px;
+  height: 90px;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.center {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex-grow: 1;
+  color: #003366;
+  text-shadow: none;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.wel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #073105;
+  margin-right: 10px;
+}
+
+.wel:hover {
+  color: #79f6d9;
+}
+
+.nav-bn {
+  padding: 9px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  color: #fffb00;
+  background-color: #4d025f;
+  width: auto;
+}
+
+.nav-bn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+h2 {
+  color: #950000;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  height: 60px;
+  background-color: #cfffec;
+  line-height: 55px; 
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a40047;
+  margin-right: 10px;
+}
+.welcome-text:hover{
+  color: #3d008d;
+  text-decoration:wavy;
+}
+
+.nav-btn {
+  padding: 9px 22px ;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px ;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  color: #e3b91e;
+  background-color: #43215e;
+  width: 120px;
+}
+
+.nav-btn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem;
+  z-index: 3;
+  position: relative;
+}
+
+.card-area {
+  margin-top: auto;
+  margin-bottom: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  flex-direction: column;
+  text-align: center;
+  height: 220px;
+}
+
+.ation-card {
+background: rgba(189, 186, 140, 0.592);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 220px;
+  height: 200px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding-top: 2.4rem;
+  text-align: center;
+}
+
+.ation-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ation-card img {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.ation-card a {
+  display: block;
+  font-size: 1.3rem;
+  color: #190000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.ation-card a:hover {
+  color: #bdc000;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+background: radial-gradient(circle, #df61b1 0%, #a052df 50%, #a3de8f 100%);
+  color: #001531;
+  margin-top: auto;
+
+  z-index: 3;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar-center {
+    font-size: 1rem;
+  }
+  .navbar-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ation-card {
+    width: 180px;
+    height: 180px;
+  }
+  .ation-card img {
+    width: 120px;
+    height: 90px;
+  }
+}

@@ -1,0 +1,234 @@
+.ttime-wrapper {
+  min-height: 58vw;
+  background-image: url('https://user-gen-media-assets.s3.amazonaws.com/gemini_images/ea9f10c7-a8ad-416e-9e42-f54d32f990e1.png');
+  box-sizing: border-box;
+  width: 100vw; 
+  background-size: cover; /* stretch and cover entire container */
+  background-position: center; /* center the background */
+  background-repeat: no-repeat; /* prevent repeating */
+  height: auto;
+}
+
+.ttime-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px 20px;
+  background-color: rgba(17, 16, 13, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navbar buttons container */
+.ls-auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Title */
+.ttime-title {
+  color: #3874FF;
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Input section */
+.ttime-input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.ttime-input {
+  padding: 12px 18px;
+  width: 320px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: rgba(255,255,255,0.9);
+  color: #1A2236;
+  font-weight: 600;
+}
+.ttime-input::placeholder {
+  color: #ecdcdc;
+  font-weight: 500;
+}
+
+.ttime-input:focus {
+  border-color: #3874FF;
+  box-shadow: 0 0 10px rgba(56, 116, 255, 0.5);
+  background-color: #232133;
+}
+
+/* Highlight if pre-filled */
+.ttime-input.prefilled {
+  border-color: #00c05d;
+  box-shadow: 0 0 12px rgba(0, 192, 93, 0.5);
+}
+
+/* Search button */
+.ttime-search-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #510000, #8B0000);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.ttime-search-btn:hover {
+background: linear-gradient(45deg, #8B0000, #510000);
+}
+
+.ttime-search-btn:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.ttime-error {
+  color: #ff4c4c;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+/* Table results */
+.ttime-results {
+  margin-top: 25px;
+  overflow-x: auto;
+}
+
+.ttime-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.ttime-table th,
+.ttime-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.ttime-table th {
+  background-color: #612d06;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.ttime-table tr {
+  color: #84d4ac;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ttime-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ttime-train-info {
+  font-size: 24px;
+  color: #9376ab;
+  margin-bottom: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Loader Popup */
+.ttime-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.ttime-popup {
+  background: #fff;
+  padding: 30px 45px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  font-weight: bold;
+  color: #43215e;
+  text-align: center;
+}
+
+
+/* Stylish train track pulse loader container */
+.ttime-loader {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(90deg, #612d06 20%, #9376ab 50%, #612d06 80%);
+  border-radius: 10px;
+  animation: pulseTrack 1.5s infinite ease-in-out;
+  box-shadow: 0 0 10px #9376ab;
+}
+
+/* Small circles representing sleepers on track */
+.ttime-loader::before,
+.ttime-loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #aca2d1;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 8px #9376ab;
+  animation: pulseSleeper 2s infinite ease-in-out;
+}
+
+.ttime-loader::before {
+  left: 8px;
+  animation-delay: 0s;
+}
+
+.ttime-loader::after {
+  right: 8px;
+  animation-delay: 0.75s;
+}
+
+@keyframes pulseTrack {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseSleeper {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+}

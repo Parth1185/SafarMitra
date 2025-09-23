@@ -1,0 +1,352 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+  background: url('https://im.rediff.com/news/2019/feb/16vande-bharat-train18.jpg') no-repeat center center fixed;
+}
+
+/* TTickets.css */
+.mytickets-page {
+  min-height: 100vh; /* Full height of the viewport */
+  background: url('https://im.rediff.com/news/2019/feb/16vande-bharat-train18.jpg') no-repeat center center fixed;
+  background-size: cover; /* Makes the image cover the whole screen */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 20px 20px; }
+
+.mytickets-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  z-index: -1;
+}
+
+.nabr {
+  background: linear-gradient(90deg, #f54b4b, #90fff6, #6a6afe, #ff8bd6);
+  color: rgba(0, 0, 0, 0.667);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  position: absolute; 
+  height: 80px;
+  width: 97%;
+  max-width: 1500px;
+  flex-wrap: wrap;
+}
+
+
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo {
+  width: 110px;
+  height: 90px;
+}
+
+
+
+.centr {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  flex-grow: 1;
+  color: #073300;
+  text-shadow: none;
+}
+.rigt {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.wel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.wel:hover {
+  color: #f37100;
+}
+
+.nav-bn {
+  padding: 9px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+color: #fffb00;
+  background-color: #4d025f;
+  width: auto;
+}
+
+.nav-bn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+h2 {
+  color: #950000;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  height: 60px;
+  background-color: #cfffec;
+  line-height: 55px; 
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a40047;
+  margin-right: 10px;
+}
+.welcome-text:hover{
+  color: #3d008d;
+  text-decoration:wavy;
+}
+
+.page-title {
+  text-align: center;
+  color: #231c23;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  background: rgba(43, 246, 127, 0.53);
+}
+.nav-btn {
+  padding: 9px 22px ;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px ;
+  cursor: pointer;
+  border: 2px solid #3f0760;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  color: #e3b91e;
+  background-color: #43215e;
+  width: 120px;
+}
+
+.nav-btn:hover {
+  background-color: #5f3c6d;
+  color: #d9992a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(192, 195, 13, 0.3);
+}
+
+
+.pae-title {
+  text-align: center;
+  color: #231c23;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  background: rgba(43, 246, 127, 0.53);
+}
+
+.ticket {
+  background: rgba(255, 255, 255,0.2);
+  border: 1px solid rgba(52, 221, 6, 0.7);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 900px;
+  animation: fadeIn 0.6s ease;
+  transition: transform 0.3s ease;
+}
+
+.ticket:hover {
+  transform: scale(1.015);
+}
+
+.ticket-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ticket-info {
+  flex: 1;
+  width: 750px;
+}
+
+.ticket-info p {
+  margin: 8px 0;
+  font-size: 1.25rem;
+  color: #01222b;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-info p strong {
+  color: #51015cfa;
+  font-weight: bold;
+}
+
+.qr-code {
+  margin-top: 100px;
+  margin-right: 35px;
+}
+
+.cancel-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #b42a2d;
+  color: rgb(202, 183, 10);
+  font-weight: bolder;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #5a1111;
+    color: rgb(255, 231, 16);
+
+}
+
+.book-btn {
+  margin: 40px auto 0;
+  display: block;
+  padding: 12px 28px;
+  background-color: #4411b1;
+  color: rgb(51, 206, 37);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #12004a;
+  color: #40c19f;
+}
+
+.no-tickets {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffdd00;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  margin-top: 50px;
+  background: rgba(1, 27, 11, 0.789);
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ticket-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qr-code {
+    margin-top: 20px;
+  }
+
+  .qr-code canvas {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Timeline container */
+.timeline {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.station {
+  text-align: center;
+  width: 45%;
+}
+
+.station p {
+  margin: 3px 0;
+}
+
+.time {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Connecting Line */
+.line {
+  flex: 1;
+  height: 2px;
+  background: #3874ff;
+  margin: 0 10px;
+  position: relative;
+}
+
+.line::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background: #3874ff;
+  border-radius: 50%;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: #3874ff;
+  border-radius: 50%;
+}

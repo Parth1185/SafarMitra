@@ -1,0 +1,331 @@
+/* ========================
+   General Wrapper & Body
+======================== */
+.ls-page-wrapper {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-image: url('https://th.bing.com/th/id/R.acccedb4646be2a04d19d1c696afdf58?rik=M0a2XCmeQNzz5Q&riu=http%3a%2f%2fwww.officechai.com%2fwp-content%2fuploads%2f2015%2f09%2fMysore_railway_station.jpg&ehk=qM8w7IHC03HZn9mPi%2fAqMBjqzl1txq1w9N%2bW%2bKD9DVE%3d&risl=&pid=ImgRaw&r=0');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================
+   Navbar
+======================== */
+.ls-navbar {
+  background: radial-gradient(circle, rgb(199, 199, 86) 0%, rgb(216, 153, 75) 35%, rgb(236, 167, 207) 100%);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 1480px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ls-navbar-logo {
+  height: 80px;
+  width: 100px;
+}
+
+.ls-navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ls-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ls-nav-btn {
+  padding: 9px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px;
+  cursor: pointer;
+  border: 2px dashed #681c38;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: rgb(246, 255, 0);
+  background-color: rgb(29, 159, 159);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ls-nav-btn:hover {
+  background-color: #3b5c66;
+  transform: translateY(-2px);
+  color: rgb(195, 201, 20);
+}
+
+.ls-auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ========================
+   Page Title
+======================== */
+.ls-page-title {
+  color: #950000;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+  height: 60px;
+  background-color: rgba(9, 162, 162, 0.75);
+  line-height: 55px;
+  border-radius: 6px;
+}
+
+/* ========================
+   Unified Input Section
+======================== */
+.ls-input-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+/* Shared Styles for Station & Filter Inputs */
+.ls-station-input,
+.ls-filter-input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #c3c3c3;
+  transition: all 0.3s ease;
+  background-color: #dfc6f4 !important;
+  color: #000000 !important;
+  width: 500px !important;
+  outline: none;
+}
+
+/* Placeholder Styling */
+.ls-station-input::placeholder,
+.ls-filter-input::placeholder {
+  color: #000000;
+  font-size: 0.98rem;
+  font-style: italic;
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+
+
+/* Focus Effect */
+.ls-station-input:focus,
+.ls-filter-input:focus {
+  border-color: #3874ff;
+  background-color: #967edd !important;
+  box-shadow: 0 0 6px rgba(56, 116, 255, 0.4);
+  color: #152e39 !important;
+}
+
+/* ========================
+   Search Button
+======================== */
+.ls-search-btn {
+  padding: 12px 25px;
+  background-color: #a837e4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ls-search-btn:hover {
+  background-color: #63198b;
+  transform: translateY(-2px);
+}
+
+/* ========================
+   Search Filter Wrapper
+======================== */
+.ls-search-filter {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ========================
+   Loading Overlay
+======================== */
+.ls-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.ls-loading-popup {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  animation: popupFadeIn 0.3s ease-in-out;
+}
+
+.ls-loading-popup p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+}
+
+/* Spinner */
+.ls-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3874ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================
+   Train List
+======================== */
+.ls-train-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.ls-train-card {
+  background: rgba(255, 254, 210, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  width: 290px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ls-train-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(56, 116, 255, 0.2);
+}
+
+.ls-train-title {
+  color: #00471c;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ls-train-info {
+  font-size: 16px;
+  color: #670062;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+/* ========================
+   Loading & Error
+======================== */
+.ls-loading-text {
+  color: #555;
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ls-error-text {
+  color: red;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* No Trains */
+.ls-no-trains {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-top: 30px;
+}
+
+/* ========================
+   Responsive
+======================== */
+@media (max-width: 768px) {
+  .ls-input-section {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ls-station-input,
+  .ls-filter-input {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .ls-search-btn {
+    width: 90%;
+    max-width: 150px;
+    margin-top: 10px;
+  }
+
+  .ls-train-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

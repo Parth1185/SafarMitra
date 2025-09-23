@@ -1,0 +1,287 @@
+/* ==============================
+   Profile Page Layout & Background
+   ============================== */
+.profile-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background: none;
+}
+
+.profile-page::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("/assets/bgprofile.png") no-repeat center top / 100% 100vh;
+  filter: brightness(0.9) blur(0.5px);
+  z-index: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+
+
+/* Center Title */
+.center-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Cambria', Georgia, Times, 'Times New Roman', serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ff5e00;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.logout-btn:hover {
+  background-color: #ff7f32;
+  transform: translateY(-2px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .center-content {
+    position: static;
+    transform: none;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ==============================
+   Main Content
+   ============================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile Card */
+.profile-container {
+  width: 450px;
+  max-width: 90%;
+  padding: 2rem;
+  background: rgba(237, 237, 237, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  border: 1px solid #dfe6e9;
+  text-align: center;
+  z-index: 2;
+}
+
+h2 {
+  color: #003366;
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
+}
+
+/* Profile Details */
+.profile-item {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.label {
+  font-weight: bold;
+  color: #ff5e00;
+  margin-right: 5px;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+.back-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: #003366;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #0059b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #999;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+/* ==============================================
+   NAVBAR
+   ============================================== */
+.dashboard-navbar {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-bottom 0.3s ease;
+  background: radial-gradient(circle at center, #fee379, #d49acf, #93cddb);
+  color: #073763;
+  border-bottom: 1px solid rgba(56, 116, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo img {
+  width: 110px;
+  height: 75px;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-left: 10px;
+  color: #0a4ca3;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dashboard-welcome {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 14px;
+  color: #00714f;
+}
+
+.dashboard-theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #000000;
+}
+
+.dashboard-theme-toggle:hover {
+  transform: scale(1.15);
+  color: #000000;
+}
+
+/* ==============================================
+   NAVBAR BUTTON
+   ============================================== */
+.dashboard-btn {
+  padding: 9px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c017d3;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(56, 116, 255, 0.4);
+}
+
+.dashboard-btn:hover {
+  background-color: #d3146a;
+  transform: translateY(-2px);
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+.footer-bg {
+  background: radial-gradient(circle at center, #fee379, #d49acf, #93cddb);
+  color: #05310d;
+  padding: 25px 20px 15px;
+  margin-top: 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ==============================
+   Messages
+   ============================== */
+.success-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+}
+
+.error-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+}
+
+/* ==============================
+   Loading Text
+   ============================== */
+.loading-text {
+  font-size: 1.2rem;
+  color: #222;
+  text-align: center;
+  margin-top: 20px;
+}
