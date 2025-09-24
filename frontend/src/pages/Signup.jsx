@@ -20,7 +20,7 @@ export default function Signup() {
     setFlash(null);
 
     try {
-      await axios.post(import.meta.env.VITE_API_BASE_URL+"/auth/signup", {
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/signup`, {
         name,
         username,
         email,
@@ -47,7 +47,7 @@ export default function Signup() {
   return (
     <div className="signup-page">
       <div className="auth-container" role="main">
-                <img src="/assets/Logo.png" alt="SafarMitra Logo" className="logo" />
+        <img src="/assets/Logo.png" alt="SafarMitra Logo" className="logo" />
 
         <h1>Signup</h1>
         {flash && <div className={`flash ${flash.type}`}>{flash.msg}</div>}
@@ -56,10 +56,13 @@ export default function Signup() {
           <div className="spinner" />
         ) : (
           <form onSubmit={handleSignup} className={shake ? "shake" : ""}>
-            <label htmlFor="name" className="login-label">Full Name</label>
+            <label htmlFor="name" className="login-label">
+              Full Name
+            </label>
             <input
               type="text"
               id="name"
+              className="sinput"
               placeholder="Enter your full name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -67,10 +70,13 @@ export default function Signup() {
               autoComplete="name"
             />
 
-            <label htmlFor="username" className="login-label">Username</label>
+            <label htmlFor="username" className="login-label">
+              Username
+            </label>
             <input
               type="text"
               id="username"
+              className="sinput"
               placeholder="Choose a username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -78,10 +84,13 @@ export default function Signup() {
               autoComplete="username"
             />
 
-            <label htmlFor="email" className="login-label">Email</label>
+            <label htmlFor="email" className="login-label">
+              Email
+            </label>
             <input
               type="email"
               id="email"
+              className="sinput"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -89,10 +98,13 @@ export default function Signup() {
               autoComplete="email"
             />
 
-            <label htmlFor="password" className="login-label">Password</label>
+            <label htmlFor="password" className="login-label">
+              Password
+            </label>
             <input
               type="password"
               id="password"
+              className="sinput"
               placeholder="Create a password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

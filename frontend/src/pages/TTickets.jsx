@@ -9,10 +9,10 @@ import logo from "/assets/Logo.png";
 const TTickets = () => {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null); // Store logged-in user data
+  const [user, setUser] = useState(null); 
   const navigate = useNavigate();
 
-  // ================== Fetch Tickets ==================
+  
   const fetchTickets = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -28,7 +28,7 @@ const TTickets = () => {
 
       setTickets(res.data || []);
 
-      // Decode user from localStorage or API if available
+      
       const storedUser = JSON.parse(localStorage.getItem("user"));
       if (storedUser) setUser(storedUser);
     } catch (error) {
@@ -47,7 +47,7 @@ const TTickets = () => {
     fetchTickets();
   }, []);
 
-  // ================== Cancel Ticket ==================
+  
   const cancelTicket = async (ticketId) => {
     if (!window.confirm("Are you sure you want to cancel this ticket?")) return;
     try {
@@ -60,14 +60,14 @@ const TTickets = () => {
         }
       );
       alert("Ticket cancelled successfully!");
-      fetchTickets(); // Refresh ticket list
+      fetchTickets(); 
     } catch (error) {
       console.error("Error cancelling ticket:", error);
       alert("Failed to cancel the ticket. Please try again.");
     }
   };
 
-  // ================== Logout ==================
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -78,7 +78,7 @@ const TTickets = () => {
 
   return (
     <div className="mytickets-page">
-      {/* Navbar */}
+      
       <nav className="nabr">
         <div className="left">
           <img src={logo} alt="Logo" className="logo" />
@@ -109,10 +109,10 @@ const TTickets = () => {
 
       <h1 className="page-title">Your Booked Tickets</h1>
 
-      {/* Tickets List */}
+      
       {tickets.length > 0 ? (
         tickets.map((ticket) => {
-          // Get full station names
+          
           const fromStationFull =
             stationsData.find((s) => s.code === ticket.fromStation)?.name ||
             ticket.fromStation;
@@ -120,11 +120,10 @@ const TTickets = () => {
             stationsData.find((s) => s.code === ticket.toStation)?.name ||
             ticket.toStation;
 
-          // QR text containing all ticket details
           const qrText = `
 PNR: ${ticket.pnr}
 Passenger: ${ticket.passengerName} (${ticket.age}, ${ticket.gender})
-Train: ${ticket.trainName} (${ticket.trainNumber})
+Train: ${ticket.trainNumber} ${ticket.trainName} 
 From: ${fromStationFull} (${ticket.fromStation})  Dep: ${ticket.fromTime}
 To: ${toStationFull} (${ticket.toStation})  Arr: ${ticket.toTime}
 Seat: ${ticket.seatNumber}
@@ -136,7 +135,6 @@ Mobile: ${ticket.mobile}
           return (
             <div key={ticket._id} className="ticket">
               <div className="ticket-content">
-                {/* Ticket Info */}
                 <div className="ticket-info">
                   <p><strong>🧾 PNR:</strong> {ticket.pnr}</p>
                   <p>
@@ -144,11 +142,10 @@ Mobile: ${ticket.mobile}
                     {ticket.age} years, {ticket.gender})
                   </p>
                   <p>
-                    <strong>🚆 Train:</strong> {ticket.trainName} (
-                    {ticket.trainNumber})
+                    <strong>🚆 Train: </strong> 
+                    {ticket.trainNumber} {ticket.trainName} 
                   </p>
 
-                  {/* Timeline with Departure and Arrival */}
                   <div className="timeline">
                     <div className="station dep">
                       <p>
@@ -188,7 +185,6 @@ Mobile: ${ticket.mobile}
                   </center>
                 </div>
 
-                {/* QR Code Section */}
                 <div className="qr-code">
                   <QRCodeCanvas value={qrText} size={180} />
                 </div>

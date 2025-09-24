@@ -69,12 +69,12 @@ background: radial-gradient(circle, #df61b1 0%, #a052df 50%, #a3de8f 100%);
   color: #003366;
 }
 
-.center {
+.cener {
   text-align: center;
   font-size: 1.3rem;
   font-weight: bold;
   flex-grow: 1;
-  color: #003366;
+  color: #363e00;
   text-shadow: none;
 }
 .right {
@@ -83,14 +83,14 @@ background: radial-gradient(circle, #df61b1 0%, #a052df 50%, #a3de8f 100%);
   gap: 0.8rem;
 }
 
-.wel {
+.wl {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #073105;
+  color: #053405;
   margin-right: 10px;
 }
 
-.wel:hover {
+.wl:hover {
   color: #79f6d9;
 }
 

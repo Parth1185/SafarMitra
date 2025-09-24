@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom"; // ✅ Added Link here
+import { useNavigate, useLocation, Link } from "react-router-dom"; 
 import "./Profile.css";
 
 
@@ -21,7 +21,7 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  // Load user data from localStorage
+  
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
     if (savedUser) {
@@ -38,7 +38,7 @@ const Profile = () => {
     }
   }, [navigate]);
 
-  // Show messages on redirect
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("message")) setMessage(params.get("message"));
@@ -53,7 +53,7 @@ const Profile = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    navigate("/"); // Redirect to home
+    navigate("/"); 
   };
 
   const handleSubmit = async (e) => {
@@ -115,7 +115,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-      {/* ✅ Fixed Navbar */}
+      
       <nav className="dashboard-navbar" aria-label="Main Navigation">
         <Link to="/" className="navbar-logo">
           <img src="/assets/Logo.png" alt="SafarMitra Logo" className="dashboard-logo" />
@@ -135,7 +135,7 @@ const Profile = () => {
         </div>
       </nav>
 
-      {/* Main Content */}
+      
       <main className="main-content">
         <div className="profile-container">
           <h2>My Profile</h2>

@@ -130,9 +130,12 @@ background-attachment: fixed;
 .tfinder-results-title {
   font-size: 30px;
   margin-bottom: 0;
-  color: #4a2406;
+  color: #442106;
+  width: 500px;
   font-weight: 800;
-  margin-left: 550px;
+  text-align: center;
+  margin-left: 450px;
+  background: rgba(39, 182, 96, 0.663);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 

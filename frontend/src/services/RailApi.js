@@ -2,9 +2,9 @@ const BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api/tra
 
 async function fetchJson(endpoint) {
   const url = `${BASE}${endpoint}`;
-  console.log("Fetching trains from:", url); // <-- DEBUG
+  console.log("Fetching trains from:", url);
   const res = await fetch(url);
-  console.log("Response status:", res.status); // <-- DEBUG
+  console.log("Response status:", res.status);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }

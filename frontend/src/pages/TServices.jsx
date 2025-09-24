@@ -58,7 +58,7 @@ img: "https://cdn-icons-png.flaticon.com/128/6113/6113801.png",
   role="button"
   tabIndex={0}
   onKeyPress={(e) => { if (e.key === 'Enter') navigate(service.path); }}
-  style={{ backgroundImage: "none" }} // Remove background image
+  style={{ backgroundImage: "none" }} 
 >
   <div className="icon-container">
     <img src={service.img} alt={`${service.title} icon`} className="service-icon" />

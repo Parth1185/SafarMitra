@@ -1,4 +1,3 @@
-// models/Ticket.js
 import mongoose from "mongoose";
 
 const ticketSchema = new mongoose.Schema(

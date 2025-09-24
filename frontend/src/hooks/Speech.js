@@ -4,7 +4,6 @@ export default function useSpeechToText() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");
 
-  // Create SpeechRecognition instance
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -16,9 +15,9 @@ export default function useSpeechToText() {
       return;
     }
 
-    recognition.continuous = false; // Stop after user finishes speaking
-    recognition.interimResults = false; // Don't show partial words
-    recognition.lang = "en-IN"; // Indian English
+    recognition.continuous = false;
+    recognition.interimResults = false; 
+    recognition.lang = "en-IN";
 
     recognition.onresult = (event) => {
       const speechResult = event.results[0][0].transcript;

@@ -170,7 +170,7 @@ color: #fffb00;
 .service-card:hover {
   border-image-slice: 1;
   border-width: 4px;
-  border-image-source: linear-gradient(45deg, #3c393b, #090751, #582403);
+  border-image-source: linear-gradient(45deg, #3c393b, #302f2c, #d36c2c);
   transform: translateY(-10px) scale(1.05);
   box-shadow:
     0 6px 40px rgba(58, 134, 255, 0.6),

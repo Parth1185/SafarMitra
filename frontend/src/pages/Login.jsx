@@ -16,13 +16,12 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  // If already logged in, skip login page
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
     if (savedUser) navigate("/dashboard");
   }, [navigate]);
 
-  // Show flash if redirected from signup
+//agar signup se redirect hua hai to flash message show karna
   useEffect(() => {
     if (location.state?.flash) {
       setFlash(location.state.flash);
@@ -34,7 +33,7 @@ export default function Login() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setError(""); // clear error on typing
+    setError(""); 
   };
 
   const handleSubmit = async (e) => {
@@ -46,7 +45,6 @@ export default function Login() {
     try {
       const res = await api.post(import.meta.env.VITE_API_BASE_URL+"/auth/login", form);
 
-      // Normalize user object
       const userData = res.data?.user || res.data;
       if (!userData) throw new Error("Invalid server response");
 
@@ -69,7 +67,6 @@ export default function Login() {
         setError(err.response?.data?.message || "Invalid username or password");
         setLoading(false);
 
-        // Shake effect
         const container = document.querySelector(".auth-container");
         if (container) {
           container.classList.add("shake");
@@ -86,7 +83,6 @@ export default function Login() {
 
         <h1>Login to your account</h1>
 
-        {/* Flash messages */}
         {flash && (
           <div className={`flash ${flash.type}`} role="alert" aria-live="assertive">
             {flash.msg}
@@ -99,7 +95,6 @@ export default function Login() {
           </div>
         )}
 
-        {/* Loading spinner */}
         {loading ? (
           <div className="loading-container" aria-busy="true" aria-live="polite">
             <div className="spinner" aria-hidden="true"></div>

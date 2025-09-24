@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./TTime.css";
-import logo from "/assets/Logo.png"; // Update path based on your folder structure
+import logo from "/assets/Logo.png";
 
 const TTime = ({ user, handleLogout }) => {
   const [trainNo, setTrainNo] = useState("");
@@ -12,17 +12,15 @@ const TTime = ({ user, handleLogout }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Read trainNo from URL query param on component mount
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const numberFromURL = params.get("trainNo");
     if (numberFromURL) {
       setTrainNo(numberFromURL);
-      fetchTimetable(numberFromURL); // Auto-fetch timetable if trainNo exists in URL
+      fetchTimetable(numberFromURL);
     }
   }, [location.search]);
 
-  // Fetch timetable for a given train number
   const fetchTimetable = async (number) => {
     const tn = number || trainNo;
 
@@ -57,7 +55,6 @@ const TTime = ({ user, handleLogout }) => {
 
   return (
     <div className="ttime-wrapper">
-      {/* Navbar */}
       <nav className="ls-navbar">
         <img src={logo} alt="Logo" className="ls-navbar-logo" />
         <div className="ls-navbar-title">SafarMitra Railway Ticket Booking</div>
@@ -88,11 +85,9 @@ const TTime = ({ user, handleLogout }) => {
         </div>
       </nav>
 
-      {/* Main Timetable Section */}
       <div className="ttime-container">
         <h2 className="ttime-title">Train Timetable Finder</h2>
 
-        {/* Input Section */}
         <div className="ttime-input-section">
           <input
             type="text"
@@ -110,24 +105,19 @@ const TTime = ({ user, handleLogout }) => {
           </button>
         </div>
 
-        {/* Error Message */}
         {error && <p className="ttime-error">{error}</p>}
 
-        {/* Loader Popup */}
         {loading && (
-  <div className="ttime-popup-overlay">
-    <div className="ttime-popup">
-      <div className="ttime-loader" aria-label="Loading train timetable"></div>
-      <p>Loading Train Timetable...</p>
-    </div>
-  </div>
-)}
+          <div className="ttime-popup-overlay">
+            <div className="ttime-popup">
+              <div className="ttime-loader" aria-label="Loading train timetable"></div>
+              <p>Loading Train Timetable...</p>
+            </div>
+          </div>
+        )}
 
-
-        {/* Timetable Display */}
         {trainData && (
           <div className="ttime-results">
-            {/* Train number and name */}
             <h3 className="ttime-train-info">
               {trainData.train_no} - {trainData.train_name}
             </h3>

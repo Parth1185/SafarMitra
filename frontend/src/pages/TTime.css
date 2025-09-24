@@ -58,14 +58,18 @@
   font-weight: 600;
 }
 .ttime-input::placeholder {
-  color: #ecdcdc;
+  color: #2e0202;
   font-weight: 500;
 }
 
+.ttime-input:focus::placeholder {
+  color: #fecaca;
+}
 .ttime-input:focus {
   border-color: #3874FF;
   box-shadow: 0 0 10px rgba(56, 116, 255, 0.5);
-  background-color: #232133;
+  background-color: #322e52;
+  color: #da92d7;
 }
 
 /* Highlight if pre-filled */

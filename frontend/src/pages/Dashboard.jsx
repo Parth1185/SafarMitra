@@ -15,11 +15,8 @@ import {
   faCheckCircle,
   faStar,
   faMoon,
-  faSun,
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
-
-// Brand icons
 import {
   faFacebookF,
   faTwitter,
@@ -28,14 +25,12 @@ import {
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 
-
 export default function Dashboard() {
   const [popupMessage, setPopupMessage] = useState("");
   const [theme, setTheme] = useState("light");
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // Theme setup
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem("safarMitraTheme", theme);
@@ -52,7 +47,6 @@ export default function Dashboard() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  // Click Handlers
   const handleTrainClick = () => navigate("/tdashboard");
   const handleBusClick = () => setPopupMessage("🚌 Bus Booking Coming Soon!");
   const handleFlightClick = () => setPopupMessage("✈️ Flight Booking Coming Soon!");
@@ -67,7 +61,6 @@ export default function Dashboard() {
 
   return (
     <div className={`main-dashboard ${theme}`}>
-      {/* -------- NAVBAR -------- */}
       <nav className="dashboard-navbar" aria-label="Main Navigation">
         <Link to="/" className="navbar-logo">
           <img src="/assets/Logo.png" alt="SafarMitra Logo" className="dashboard-logo" />
@@ -106,13 +99,11 @@ export default function Dashboard() {
               <FontAwesomeIcon icon={faMoon} />
             ) : (
               <>☀︎</>
-
             )}
           </button>
         </div>
       </nav>
 
-      {/* -------- MAIN CONTENT -------- */}
       <div className={`dashboard-wrapper ${!user ? "logged-out" : "logged-in"}`}>
         <div className="dashboard-content">
           <h1 className="dashboard-heading">
@@ -142,7 +133,6 @@ export default function Dashboard() {
             </div>
           ) : (
             <div className="dashboard-card-area">
-              {/* Train Booking */}
               <div
                 className="dashboard-card"
                 style={{
@@ -155,7 +145,6 @@ export default function Dashboard() {
                   <p>Train Booking</p>
                 </div>
               </div>
-              {/* Bus Booking */}
               <div
                 className="dashboard-card"
                 style={{
@@ -168,7 +157,6 @@ export default function Dashboard() {
                   <p>Bus Booking</p>
                 </div>
               </div>
-              {/* Flight Booking */}
               <div
                 className="dashboard-card"
                 style={{
@@ -185,7 +173,6 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* -------- WHY CHOOSE US -------- */}
         <div className="why-section-bg">
           <div className="why-container">
             <div className="why-title">Why Choose SafarMitra?</div>
@@ -262,7 +249,6 @@ export default function Dashboard() {
                 <p>
                   Your trusted travel companion for seamless journey planning. Book buses, trains, and flights with confidence and ease.
                 </p>
-
                 <div className="contact-info">
                   <div><FontAwesomeIcon icon={faMapMarkerAlt} /> #187, Feroze Gandhi Market, Ludhiana - 141013</div>
                   <div><FontAwesomeIcon icon={faPhone} /> +91 94173 53263</div>
@@ -303,7 +289,6 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-
             <form className="footer-newsletter">
               <div className="footer-stats">
                 <span className="verified">
@@ -318,7 +303,6 @@ export default function Dashboard() {
               <input type="email" placeholder="Enter your email" />
               <button type="submit">Subscribe</button>
             </form>
-
             <div className="footer-social">
               <a href="https://www.facebook.com/" className="facebook">
                 <FontAwesomeIcon icon={faFacebookF} />
@@ -336,16 +320,12 @@ export default function Dashboard() {
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
-
-
             <div className="footer-base">
               <div>© 2025 SafarMitra. All rights reserved.</div>
             </div>
           </div>
         </footer>
       </div>
-
-      {/* -------- POPUP MODAL -------- */}
       {popupMessage && (
         <div className="popup-overlay" onClick={closePopup}>
           <div className="popup-box" onClick={(e) => e.stopPropagation()}>

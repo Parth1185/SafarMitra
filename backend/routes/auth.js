@@ -19,17 +19,15 @@ function setTokenCookie(res, userId) {
 router.post("/edit-profile", requireAuth, async (req, res) => {
   try {
     const { name, username, email, currentPassword, newPassword } = req.body;
-const userId = req.userId;
+    const userId = req.userId;
 
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ error: "User not found" });
 
-    // Update only provided fields
     if (name) user.name = name;
     if (username) user.username = username;
     if (email) user.email = email;
 
-    // If password update requested
     if (newPassword && currentPassword) {
       const isMatch = await bcrypt.compare(currentPassword, user.password);
       if (!isMatch) return res.status(400).json({ error: "Current password is incorrect" });
@@ -65,7 +63,6 @@ router.post("/login", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    // User can log in using either username or email
     const user = await User.findOne({
       $or: [{ email }, { username }],
     });
@@ -79,12 +76,11 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-const token = jwt.sign(
-  { id: user._id, version: process.env.TOKEN_VERSION },
-  process.env.JWT_SECRET,
-  { expiresIn: "1d" }
-);
-
+    const token = jwt.sign(
+      { id: user._id, version: process.env.TOKEN_VERSION },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
 
     res.status(200).json({
       message: "Login successful",
@@ -101,7 +97,6 @@ const token = jwt.sign(
     res.status(500).json({ error: "Server error during login" });
   }
 });
-  
 
 router.post("/logout", (req, res) => {
   res.clearCookie("token", { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production" });

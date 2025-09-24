@@ -10,7 +10,6 @@ export default function TBook() {
 const toDropdownRef = useRef(null);
 
 
-  // ======================= State =========================
   const [formData, setFormData] = useState({
     passengerName: "",
     age: "",
@@ -34,18 +33,13 @@ const toDropdownRef = useRef(null);
   const [trains, setTrains] = useState([]);
   const [trainInfo, setTrainInfo] = useState("");
 
-  // Speech recognition states
   const [isListening, setIsListening] = useState(false);
-  const [activeField, setActiveField] = useState(""); // fromStation or toStation
-
-  // Highlighted index for dropdown keyboard navigation
+  const [activeField, setActiveField] = useState(""); 
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const highlightedItemRef = useRef(null);
 
-  // ======================= Setup =========================
   useEffect(() => setStations(stationsData), []);
 
-  // Scroll dropdown to keep highlighted item visible
   useEffect(() => {
     if (highlightedItemRef.current) {
       highlightedItemRef.current.scrollIntoView({
@@ -54,7 +48,6 @@ const toDropdownRef = useRef(null);
     }
   }, [highlightedIndex]);
 
-  // ======================= Speech Recognition =========================
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = SpeechRecognition ? new SpeechRecognition() : null;
@@ -94,7 +87,7 @@ const toDropdownRef = useRef(null);
     };
   };
 
-  // ======================= Station Filter =========================
+  
   const filterStations = (value, type) => {
 
 
@@ -135,7 +128,6 @@ const toDropdownRef = useRef(null);
     setHighlightedIndex(-1);
   };
 
-  // ======================= Dropdown Keyboard Navigation =========================
   const handleStationInputKeyDown = (e, type) => {
     if (!filteredStations.length) return;
 
@@ -157,7 +149,6 @@ const toDropdownRef = useRef(null);
     }
   };
 
-  // ======================= Train Fetching =========================
   const formatDateForAPI = (isoDate) => {
     if (!isoDate) return "";
     const [yyyy, mm, dd] = isoDate.split("-");
@@ -188,7 +179,6 @@ const toDropdownRef = useRef(null);
       if (trainsList.length === 0)
         return setTrainInfo("No trains run on the selected date for this route.");
 
-      // Sort trains by departure time
       trainsList.sort((a, b) => {
         const timeA = a.train_base?.from_time || "00:00";
         const timeB = b.train_base?.from_time || "00:00";
@@ -206,11 +196,9 @@ const toDropdownRef = useRef(null);
   useEffect(() => {
     if (formData.fromStationCode && formData.toStationCode && formData.dateOfJourney)
       fetchTrains();
-    // Only fetch if all fields are filled
-    // eslint-disable-next-line
+
   }, [formData.fromStationCode, formData.toStationCode, formData.dateOfJourney]);
 
-  // ======================= Form Handlers =========================
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -280,7 +268,6 @@ const toDropdownRef = useRef(null);
     }
   };
 
-  // ======================= Render =========================
   return (
     <div className="page-background">
       <div className="ticket-booking">
@@ -289,7 +276,6 @@ const toDropdownRef = useRef(null);
         </marquee>
 
         <form onSubmit={handleSubmit} className="ticket-form">
-          {/* Passenger Details */}
           <fieldset>
             <h2>Passenger Details</h2>
             <div className="form-group">
@@ -341,7 +327,6 @@ const toDropdownRef = useRef(null);
             </div>
           </fieldset>
 
-          {/* Travel Details */}
           <fieldset>
             <h2>Travel Details</h2>
             <div className="form-group">
@@ -351,7 +336,7 @@ const toDropdownRef = useRef(null);
                 name="dateOfJourney"
                 value={formData.dateOfJourney}
                 onChange={handleChange}
-                min={new Date().toISOString().split("T")[0]} // Prevent past dates
+                min={new Date().toISOString().split("T")[0]}
                 required
               />
             </div>
@@ -444,7 +429,6 @@ const toDropdownRef = useRef(null);
               )}
             </div>
 
-            {/* Train List */}
             <div className="form-group">
               <label>Train:</label>
               <select
@@ -477,7 +461,6 @@ const toDropdownRef = useRef(null);
               {trainInfo && <p>{trainInfo}</p>}
             </div>
 
-            {/* Class */}
             <div className="form-group">
               <label>Class:</label>
               <select
@@ -497,7 +480,6 @@ const toDropdownRef = useRef(null);
             </div>
           </fieldset>
 
-          {/* Buttons */}
           <div className="form-buttons">
             <button
               type="button"

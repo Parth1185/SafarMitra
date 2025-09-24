@@ -18,11 +18,12 @@ const LiveStation = ({ user, handleLogout }) => {
     }
 
     try {
-      setLoading(true); // Show popup
+      setLoading(true);
       setError("");
 
-      const response = await fetch(
-        `${VITE_API_BASE_URL}/train/stationLive?code=${stationCode}`
+   
+const response = await fetch(
+  `${import.meta.env.VITE_API_BASE_URL}/train/stationLive?code=${stationCode}`
       );
       const result = await response.json();
       console.log("Live Station API Response:", result);
@@ -37,11 +38,10 @@ const LiveStation = ({ user, handleLogout }) => {
       console.error("Error fetching live station:", err);
       setError("Something went wrong while fetching data.");
     } finally {
-      setLoading(false); // Hide popup
+      setLoading(false);
     }
   };
 
-  // Safely filter train list
   const filteredTrains = liveData.filter(
     (train) =>
       train?.train_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -52,7 +52,6 @@ const LiveStation = ({ user, handleLogout }) => {
 
   return (
     <div className="ls-page-wrapper">
-      {/* Navbar */}
       <nav className="ls-navbar">
         <img src={logo} alt="Logo" className="ls-navbar-logo" />
 
@@ -87,10 +86,9 @@ const LiveStation = ({ user, handleLogout }) => {
         </div>
       </nav>
 
-      {/* Main Content */}
       <h2 className="ls-page-title">Live Station Arrival & Departure</h2>
 
-      {/* Search Input */}
+
       <div className="ls-input-section">
         <input
           type="text"
@@ -104,7 +102,7 @@ const LiveStation = ({ user, handleLogout }) => {
         </button>
       </div>
 
-      {/* Filter Bar */}
+      
       {liveData.length > 0 && (
         <div className="ls-search-filter">
           <input
@@ -117,7 +115,7 @@ const LiveStation = ({ user, handleLogout }) => {
         </div>
       )}
 
-      {/* === Loading Popup === */}
+      
       {loading && (
         <div className="ls-loading-overlay">
           <div className="ls-loading-popup">
@@ -127,10 +125,10 @@ const LiveStation = ({ user, handleLogout }) => {
         </div>
       )}
 
-      {/* Error Message */}
+      
       {error && <p className="ls-error-text">{error}</p>}
 
-      {/* Train List */}
+      
       <div className="ls-train-list">
         {filteredTrains.length > 0 ? (
           filteredTrains.map((train, index) => (

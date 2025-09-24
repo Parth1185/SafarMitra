@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TFinder.css";
-import logo from "/assets/Logo.png"; // Update path as needed
+import logo from "/assets/Logo.png"; 
 
 const TFinder = () => {
   const [fromStation, setFromStation] = useState("");
@@ -10,18 +10,18 @@ const TFinder = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [sortOption, setSortOption] = useState("");
-  const [filterQuery, setFilterQuery] = useState(""); // Filter input state
+  const [filterQuery, setFilterQuery] = useState(""); 
 
   const navigate = useNavigate();
 
-  // Convert "HH.MM" -> total minutes
+ 
   const convertToMinutes = (timeStr) => {
     if (!timeStr || typeof timeStr !== "string") return 0;
     const [hours, minutes] = timeStr.split(".").map(Number);
     return hours * 60 + minutes;
   };
 
-  // Convert travel time like "HH.MM" or "HH:MM" -> total minutes
+ 
   const convertTravelTime = (travelTimeStr) => {
     if (!travelTimeStr || typeof travelTimeStr !== "string") return 0;
 
@@ -33,7 +33,7 @@ const TFinder = () => {
     return (hours || 0) * 60 + (minutes || 0);
   };
 
-  // Fetch trains between two stations
+  
   const fetchTrains = async () => {
     if (!fromStation.trim() || !toStation.trim()) {
       setError("Please enter both Origin and Destination station codes.");
@@ -69,7 +69,7 @@ const TFinder = () => {
     }
   };
 
-  // Sorting logic
+  
   const handleSort = (option) => {
     setSortOption(option);
     const sorted = [...trains];
@@ -130,7 +130,7 @@ const TFinder = () => {
     setTrains(sorted);
   };
 
-  // Running days display
+  
   const renderRunningDays = (daysString) => {
     const days = ["M", "T", "W", "T", "F", "S", "S"];
     return daysString.split("").map((day, index) => (
@@ -154,7 +154,7 @@ const TFinder = () => {
 
   return (
     <div className="tfinder-container">
-      {/* Navbar */}
+     
       <nav className="ls-navbar">
         <img src={logo} alt="Logo" className="ls-navbar-logo" />
         <div className="ls-navbar-title">SafarMitra Railway Ticket Booking</div>
@@ -172,7 +172,7 @@ const TFinder = () => {
 
       <h2 className="tfinder-title">Find Trains Between Stations</h2>
 
-      {/* Search Input Section */}
+      
       <div className="tfinder-input-section">
         <input
           type="text"
@@ -197,10 +197,9 @@ const TFinder = () => {
         </button>
       </div>
 
-      {/* Error Message */}
+
       {error && <p className="tfinder-error">{error}</p>}
 
-      {/* Loader */}
       {loading && (
   <div className="tfinder-popup-overlay">
     <div className="tfinder-popup">
@@ -211,13 +210,12 @@ const TFinder = () => {
 )}
 
 
-      {/* Results */}
+
       {trains.length > 0 && (
         <div className="tfinder-results">
           <div className="tfinder-results-header">
             <h3 className="tfinder-results-title">Available Trains</h3>
 
-            {/* Sort Dropdown */}
             <select
               className="tfinder-sort-dropdown"
               value={sortOption}

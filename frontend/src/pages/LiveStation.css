@@ -59,15 +59,15 @@ body {
   border: 2px dashed #681c38;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   text-decoration: none;
-  color: rgb(246, 255, 0);
-  background-color: rgb(29, 159, 159);
+  color: rgb(71, 11, 1);
+  background-color: rgb(25, 246, 246);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .ls-nav-btn:hover {
-  background-color: #3b5c66;
+  background-color: #19a6b0;
   transform: translateY(-2px);
-  color: rgb(195, 201, 20);
+  color: rgb(255, 10, 10);
 }
 
 .ls-auth-buttons {

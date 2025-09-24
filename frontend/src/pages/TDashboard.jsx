@@ -38,17 +38,16 @@ const Dashboard = () => {
       <div className="background-container"></div>
       <div className="overlay"></div>
 
-      {/* Navbar */}
       <nav className="navbr">
         <div className="left">
           <img src={logo} alt="Logo" className="logo" />
         </div>
 
-        <div className="center"> SafarMitra Railway Ticket Booking </div>
+        <div className="cener"> SafarMitra Railway Ticket Booking </div>
 
         <div className="right">
 <>
-              <span className="wel">
+              <span className="wl">
                 🙏 Namaste, {user.name || user.username}!
               </span>
               <button
@@ -64,7 +63,6 @@ const Dashboard = () => {
         </div>
       </nav>
 
-      {/* Main Content */}
       {user && (
         <div className="card-area">
           <div className="card-container">

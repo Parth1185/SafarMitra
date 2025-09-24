@@ -499,9 +499,10 @@ body.dark .footer-brand p {
   color: #daddf5;
 }
 .footer-brand .contact-info {
-  font-size: 0.95rem;
-  color: #93033d;
+  font-size: 0.98rem;
+  color: #98003d;
   margin-top: 10px;
+  margin-left: 0;
 }
 body.dark .footer-brand .contact-info {
   color: #b0a7a7;
